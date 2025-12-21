@@ -1,0 +1,10 @@
+name: triggering issue event
+on:
+  issues:
+    types: [opened]
+jobs:
+  running_metadata_output:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echoing metadata
+        run: echo "${{toJSON(github)}}"
